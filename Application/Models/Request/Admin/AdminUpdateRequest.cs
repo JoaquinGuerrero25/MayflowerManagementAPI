@@ -1,27 +1,20 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Enums;
 
-namespace Domain.Entities
+namespace Application.Models.Request.Admin
 {
-    public abstract class User : BaseEntity
+    public class AdminUpdateRequest
     {
         public string Name { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public string UserName { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
-        public Address Address { get; set; } = new Address();
-        public bool IsEnabled { get; set; }
-        public UserRole Role { get; set; }
-
-        public User()
-        {
-            IsEnabled = true;
-        }
+        public AddressDto Address { get; set; } = new AddressDto();
+        public bool IsEnabled { get; set; } = true;
     }
 }

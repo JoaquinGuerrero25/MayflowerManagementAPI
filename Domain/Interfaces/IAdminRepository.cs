@@ -9,5 +9,6 @@ namespace Domain.Interfaces
 {
     public interface IAdminRepository : IBaseRepository<Admin>
     {
+        public bool ExistsUserName(string userName);
     }
 }
