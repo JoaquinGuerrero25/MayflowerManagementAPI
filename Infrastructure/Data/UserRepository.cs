@@ -24,7 +24,8 @@ namespace Infrastructure.Data
 
         public User? Authenticate(string userName, string password)
         {
-            return null;
+            User? user = _context.Set<Admin>().FirstOrDefault(a => a.UserName == userName && a.Password == password);
+            return user;
         }
     }
 }
